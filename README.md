@@ -7,22 +7,22 @@
 
 **This image replace the old image: [ashdev/docker-spigot](https://hub.docker.com/r/ashdev/docker-spigot)**
 
-## Minecraft 1.13 Update Aquatic
+## Minecraft 1.15 Nether Update
 
-This docker image is ready to use the latest version of Minecraft (1.13 Update Aquatic)
+This docker image is ready to use the latest version of Minecraft (1.15 Nether Update)
 
 ### Available tags
 
 All available tags are always listed [in Docker Hub](https://hub.docker.com/r/ashdev/minecraft-spigot/tags):
 
-- `1.13`, `latest`: Latest server for Minecraft 1.13.
-- `1.13-alpine`, `alpine`: Latest server using Alpine for Minecraft 1.13.
+- `1.15`, `latest`: Latest server for Minecraft 1.15.
+- `1.15-alpine`, `alpine`: Latest server using Alpine for Minecraft 1.15.
 
 The plugins are using the latest version. In case of issue, disable them.
 
-To use the version 1.13 of docker run
+To use the version 1.15 of docker run
 
-    docker run -d -e REV=1.13 -p 25565:25565 ashdev/minecraft-spigot:latest
+    docker run -d -e REV=1.15 -p 25565:25565 ashdev/minecraft-spigot:latest
 
 ## Description
 
@@ -84,6 +84,12 @@ example:
 
     docker exec mc /spigot_cmd.sh op AshDevFr
 
+## High CPU on spigot server
+
+You can disable the console to reduce the CPU usage but you will loose the ability to send commands to the server
+
+    docker run -d -e NOCONSOLE=true ...
+
 ## EULA Support
 
 Mojang now requires accepting the [Minecraft EULA](https://account.mojang.com/documents/minecraft_eula). To accept add
@@ -103,18 +109,6 @@ to map a directory on your host machine to the container's `/minecraft` director
 
 When attached in this way you can stop the server, edit the configuration under your attached `/path/on/host`
 and start the server again with `docker start CONTAINERID` to pick up the new configuration.
-
-### In ubuntu you can specify the UID of the user
-
-**NOTE**: By default, the files in the attached directory will be owned by the host user with UID of 1000.
-You can use an different UID by passing the option:
-
-    -e UID=1000
-
-replacing 1000 with a UID that is present on the host.
-Here is one way to find the UID given a username:
-
-    grep some_host_user /etc/passwd|cut -d: -f3
 
 ## Running with Plugins
 

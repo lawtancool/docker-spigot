@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM alpine:3.11
 MAINTAINER AshDev <ashdevfr@gmail.com>
 
 # Java Version and other ENV
@@ -12,7 +12,7 @@ ENV JAVA_VERSION_MAJOR=8 \
 
 # Install dependencies
 RUN apk upgrade --update && \
-    apk add --update wget curl ca-certificates openssl bash git screen util-linux sudo shadow && \
+    apk add --update wget curl ca-certificates openssl bash git screen util-linux sudo shadow nss && \
     update-ca-certificates
 
 # Install Java8
