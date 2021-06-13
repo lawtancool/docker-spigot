@@ -1,6 +1,9 @@
 FROM openjdk:16
 MAINTAINER AshDev <ashdevfr@gmail.com>
 
+RUN microdnf install wget git
+RUN microdnf clean all
+
 ENV APP_NAME=server
 #default directory for SPIGOT-server
 ENV SPIGOT_HOME /minecraft
