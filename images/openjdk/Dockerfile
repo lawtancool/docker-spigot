@@ -1,4 +1,4 @@
-FROM openjdk:16
+FROM openjdk:17
 MAINTAINER AshDev <ashdevfr@gmail.com>
 
 RUN microdnf install wget git
