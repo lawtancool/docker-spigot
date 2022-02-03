@@ -48,7 +48,7 @@ if [ ! -f $SPIGOT_HOME/spigot-$REV.jar ]; then
   pushd /tmp/buildSpigot
   wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
   HOME=/tmp/buildSpigot java $JVM_OPTS -jar BuildTools.jar --rev $REV
-  cp /tmp/buildSpigot/Spigot/Spigot-Server/target/spigot-*.jar $SPIGOT_HOME/spigot-$REV.jar
+  cp /tmp/buildSpigot/spigot-*.jar $SPIGOT_HOME/spigot-$REV.jar
   popd
   rm -rf /tmp/buildSpigot
   mkdir -p $SPIGOT_HOME/plugins
