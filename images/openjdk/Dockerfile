@@ -1,5 +1,5 @@
-FROM openjdk:17
-MAINTAINER AshDev <ashdevfr@gmail.com>
+FROM openjdk:21
+MAINTAINER lawtancool <contact@lawrencetan.ca>
 
 RUN microdnf install wget git
 RUN microdnf clean all
