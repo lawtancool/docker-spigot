@@ -1,5 +1,5 @@
 FROM openjdk:21
-MAINTAINER lawtancool <contact@lawrencetan.ca>
+LABEL org.opencontainers.image.authors="contact@lawrencetan.ca"
 
 RUN microdnf install wget git
 RUN microdnf clean all

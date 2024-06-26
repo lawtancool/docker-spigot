@@ -1,7 +1,6 @@
 version: '3'
 services:
   spigot:
-    build: images/ubuntu
     environment:
     - REV=latest
     - POLL=true
